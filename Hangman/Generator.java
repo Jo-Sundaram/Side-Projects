@@ -3,6 +3,7 @@ import java.util.Random;
 class Generator {
 	
 	public static int fileLenght(){
+        
         /* This method returns the number of lines in a file*/
 
         IO.openInputFile("Wordbank.txt");
@@ -41,7 +42,6 @@ class Generator {
         IO.closeInputFile();
 
         int randomWord = random.nextInt(fileLength);
-        // System.out.println(words[randomWord]);
 
         
         return words[randomWord];
@@ -52,7 +52,6 @@ class Generator {
         /* This method prints a string of blanks '_' for the given mystery word */
 
         String[] blanks = new String [mysteryWord.length()];
-        String out = "";
 
         for(int i = 0; i < mysteryWord.length(); i++){
             
@@ -70,23 +69,22 @@ class Generator {
     }
 
     public static String[] replaceBlanks(String mysteryWord,String[] blanks, char token){
-        // String[] blanks = new String [mysteryWord.length()];
+        /* This method replaced the blanks with the user's inputted letter (token) */
 
         String[] newBlanks = blanks;
 
         for(int i = 0; i < mysteryWord.length(); i++){
-            char letter = mysteryWord.charAt(i);
+            char letter = mysteryWord.charAt(i); // Track each letter of the word as a char
 
-            if (token == letter){
+            if (token == letter){ // the the current letter == the user's guessed letter
 
-                newBlanks[i] = Character.toString(token);
+                newBlanks[i] = Character.toString(token); // replace the blanks with the letter
 
             }
 
             System.out.print(newBlanks[i]+" ");
 
         }
-
 
         System.out.println();
 
@@ -96,7 +94,8 @@ class Generator {
         
     }
 
-    public static String checkAnswer(String mysteryword, String[] blanks){
+    public static boolean checkAnswer(String mysteryword, String[] blanks){
+        /* This method compares the user's answers to the mystery word and determines when they completed the word */
 
         String[] letters = new String[mysteryword.length()];
 
@@ -105,13 +104,15 @@ class Generator {
 
             letters[i] = Character.toString(mysteryword.charAt(i));
 
-            if (letters[i]==blanks[i]){
-                System.out.print("true");
+            if(letters[i].equalsIgnoreCase(blanks[i])){
+                continue;
+            }else{
+                return false;
             }
 
         }
-        
-        return "false";
+
+        return true;
 
     }
 

@@ -1,41 +1,31 @@
 import java.util.Scanner;
 
 class Hangman{
-
-
     public static void main(String[] args) {
         Scanner key = new Scanner(System.in); 
-        String word = Generator.randomWord();
 
-        System.out.println(word);
+        String word = Generator.randomWord(); // Pulls a random word from the WordBank.txt
+
+        System.out.println("Guess the word: ");
         String blanks[] = Generator.createBlanks(word);
 
         boolean playing = false;
         
-        String check;
-
        while (playing==false){
             String user = key.nextLine(); // user guesses a letter
 
-            if(word.contains(user)){
-                System.out.println(word + " contains the letter: " + user);
+            if(word.contains(user)){ // if the user guessed a correct letter
+                System.out.println("The word contains the letter: " + user);
 
                 blanks = Generator.replaceBlanks(word,blanks,user.charAt(0)); // replace blanks to letter
-                check = Generator.checkAnswer(word, blanks); // need to fix
-
 
             } else{
-                System.out.println(word + " does not contain the letter: " + user);
-
+                System.out.println("The word does not contain the letter: " + user);
             }   
-
-
-                  
-
+            playing = Generator.checkAnswer(word, blanks); // compare the status of the blanks to determine if they completed the word
         }
         key.close();
-    
+
+        System.out.println("You guessed the word: " + word);
     }
-
-
 }

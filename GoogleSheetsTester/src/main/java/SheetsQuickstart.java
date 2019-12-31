@@ -31,9 +31,8 @@ public class SheetsQuickstart {
      * Global instance of the scopes required by this quickstart.
      * If modifying these scopes, delete your previously saved tokens/ folder.
      */
-    private static final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS_READONLY);
-    private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
-    // private static final String spreadsheetId = "1uBHFsTpwllzqe8BUi4IZaVCJvpBZvshISpHUPaJvIfw";
+     private static final List<String> SCOPES = Arrays.asList(SheetsScopes.SPREADSHEETS);
+     private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
 
     /**
      * Creates an authorized Credential object.
@@ -66,12 +65,11 @@ public class SheetsQuickstart {
 
 
    
-    
     public static void main(String... args) throws IOException, GeneralSecurityException {
         // Build a new authorized API client service.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         final String spreadsheetId = "1uBHFsTpwllzqe8BUi4IZaVCJvpBZvshISpHUPaJvIfw";
-        final String range = "Sheet1!C1:t";
+        final String range = "Sheet1!A1:t";
         Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
                 .build();
@@ -88,12 +86,12 @@ public class SheetsQuickstart {
             }
         }
 
-        List<List<Object>> nevalue = Arrays.asList(Arrays.asList(("Hello"))); 
+        List<List<Object>> newvalue = Arrays.asList(Arrays.asList("Hello"),Arrays.asList("Hello"),Arrays.asList("Hello")); 
 
-        ValueRange content = new ValueRange().setValues(nevalue);
+        ValueRange content = new ValueRange().setValues(newvalue);
 
-        UpdateValuesResponse write = service.spreadsheets().values().update(spreadsheetId, "Sheet1!J1:H", content).setValueInputOption("RAW").execute();
+        UpdateValuesResponse write = service.spreadsheets().values().update(spreadsheetId, "Sheet1!J1:K", content).setValueInputOption("RAW").execute();
         
-        System.out.printf("%d cells updated.",write.getUpdatedCells());
+        // System.out.printf("%d cells updated.",write.getUpdatedCells());
     }
 }

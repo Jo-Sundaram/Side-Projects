@@ -26,6 +26,7 @@ public class SheetsQuickstart {
     private static final String APPLICATION_NAME = "Google Sheets API Java Quickstart";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static final String TOKENS_DIRECTORY_PATH = "tokens";
+    private static String spreadsheetId = "1uBHFsTpwllzqe8BUi4IZaVCJvpBZvshISpHUPaJvIfw";
 
     /**
      * Global instance of the scopes required by this quickstart.
@@ -90,7 +91,7 @@ public class SheetsQuickstart {
 
         ValueRange content = new ValueRange().setValues(newvalue);
 
-        UpdateValuesResponse write = service.spreadsheets().values().update(spreadsheetId, "Sheet1!J1:K", content).setValueInputOption("RAW").execute();
+//        UpdateValuesResponse write = service.spreadsheets().values().update(spreadsheetId, "Sheet1!J1:K", content).setValueInputOption("RAW").execute();
         
         // System.out.printf("%d cells updated.",write.getUpdatedCells());
     }

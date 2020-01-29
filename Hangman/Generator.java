@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Random;
 
 class Generator {
@@ -115,5 +116,19 @@ class Generator {
         return true;
 
     }
+
+    public static String[] split(String string){
+
+        String[] words = string.split(",");
+
+        for (int i =0; i < words.length; i++){
+            System.out.print(words[i]);
+
+        }
+        return words;
+
+        
+    }
+
 
 }

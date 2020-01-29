@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2cade8c4-3cee-412a-a6f6-4781260044e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/SheetsTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/SheetsTester.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SheetsTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SheetsTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tokens/StoredCredential" beforeDir="false" afterPath="$PROJECT_DIR$/tokens/StoredCredential" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hangman/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hangman/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hangman/Hangman.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -21,20 +25,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/SheetsQuickstart.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="28" column="89" selection-start-line="28" selection-start-column="89" selection-end-line="28" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/SheetsTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-113">
-              <caret line="109" column="28" lean-forward="true" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="28" />
+            <state relative-caret-position="-207">
+              <caret line="149" column="88" selection-start-line="149" selection-start-column="88" selection-end-line="149" selection-end-column="88" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#authorize#0;class#SheetsTester#0" />
+                <element signature="method#getSheetsService#0;class#SheetsTester#0" />
+                <element signature="method#appendData#0;class#SheetsTester#0" />
+                <element signature="method#updateData#0;class#SheetsTester#0" />
+                <element signature="method#deleteData#0;class#SheetsTester#0" />
+                <element signature="e#7372#7388#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,45 +78,7 @@
     <panes>
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="GoogleSheetsTester" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="GoogleSheetsTester" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="GoogleSheetsTester" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="GoogleSheetsTester" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="main" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="GoogleSheetsTester" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="GoogleSheetsTester" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="test" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="GoogleSheetsTester" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="GoogleSheetsTester" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="GoogleSheetsTester" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="GoogleSheetsTester" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="GoogleSheetsTester" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="GoogleSheetsTester" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="bin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -171,8 +137,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1805668" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19352227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -181,7 +148,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.5046555" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.32029796" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -190,7 +157,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49959514" weight="0.053285968" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50040483" side_tool="true" weight="0.32149202" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.3285968" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3285968" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32774675" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -216,17 +183,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SheetsQuickstart.java">
+    <entry file="file://$USER_HOME$/Dropbox/COMP_1406/Assignments/Assignment0/src/ArrayPractice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret line="28" column="89" selection-start-line="28" selection-start-column="89" selection-end-line="28" selection-end-column="89" />
+          <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Google Sheets Python/sheets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SheetsQuickstart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1175">
+          <caret line="95" column="74" lean-forward="true" selection-start-line="95" selection-start-column="74" selection-end-line="95" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SheetsTester.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-113">
-          <caret line="109" column="28" lean-forward="true" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="28" />
+        <state relative-caret-position="-207">
+          <caret line="149" column="88" selection-start-line="149" selection-start-column="88" selection-end-line="149" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#authorize#0;class#SheetsTester#0" />
+            <element signature="method#getSheetsService#0;class#SheetsTester#0" />
+            <element signature="method#appendData#0;class#SheetsTester#0" />
+            <element signature="method#updateData#0;class#SheetsTester#0" />
+            <element signature="method#deleteData#0;class#SheetsTester#0" />
+            <element signature="e#7372#7388#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -25,8 +25,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import  java.text.SimpleDateFormat;
 
 import javax.security.auth.login.LoginContext;
+import java.util.HashMap;
 
 
 public class SheetsTester{
@@ -128,7 +130,7 @@ public class SheetsTester{
                 .setRange(
                         new DimensionRange()
                         .setSheetId(sheetId) // sheet ID at end of this spreadsheets URL is 0
-                        .setDimension(dimension) // want to delete an entire row or column
+                        .setDimension(dimension) // want to delete an entire "ROWS" or "COLUMNS"
                         .setStartIndex(startIndex) // rows are 0 indexed, this will delete row 15
                 );
 
@@ -144,17 +146,29 @@ public class SheetsTester{
 
     }
 
+    public static void report(int content) throws IOException,GeneralSecurityException{
+        /* Report specific data to the console (e.g. Total income, total spendings, etc) */
+        String range = "";
+        HashMap <Integer,String> map = new HashMap<Integer,String> ();
+
+        if (content == 1){ // total income
+            range = "Sheet1!B2";
+        }
+        readData(range,0,0);
+    }
+
     public static void main(String[] args) throws IOException,GeneralSecurityException{
         sheetsService = getSheetsService();
-        String range = "Sheet1!A1:B";
+        String range = "Sheet1!C3:D";
 
-        readData(range,0,1);
+//        readData(range,0,1);
 
-        appendData("Sheet1", "How about,this", "INSERT_ROWS");
+//        report(1);
+        //appendData("Sheet1", "How about,this", "INSERT_ROWS");
 
-        updateData("J14", "HEllo");
-
-        deleteData(0, 14, "ROWS");
+//        updateData("J1", "HEllo");
+//
+//       deleteData(0, 10, "COLUMNS");
 
     }
 

@@ -10,6 +10,7 @@ class Hangman{
         String blanks[] = Generator.createBlanks(word);
 
         boolean playing = false;
+
         
        while (playing==false){
             String user = key.nextLine(); // user guesses a letter

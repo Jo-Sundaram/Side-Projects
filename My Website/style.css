@@ -1,0 +1,242 @@
+body {
+    padding: 0px;
+    margin: 0px;
+
+ }
+
+ /* div{
+     padding: 0px;
+     margin: 0px;
+ } */
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.top-bar{
+    background-color: #1d3557;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+ 
+}
+
+.header-content{
+    margin: 5 auto;
+    padding-top: 10px;
+    color: rgb(186, 223, 235);
+    font-family: 'Comfortaa';
+    font-weight: 20;
+    font-size: 20px;
+  
+}
+
+.body-headers{
+    font-family: 'Comfortaa';
+    font-weight: 20;
+    font-size: 30px;
+ 
+}
+
+.body-content{
+    padding-top: 15px;
+    padding-left: 50px;
+    font-family: 'Nunito';
+    font-weight: 20;
+    font-size: 20px;
+}
+
+.body-div{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-family: 'Nunito';
+    font-weight: 20;
+    font-size: 20px;
+}
+
+.sub-body-header{
+    font-family: 'Nunito';
+    font-weight: 30;
+    font-size: 25px;
+    text-decoration: underline;
+
+}
+
+.sub-body-div{
+    width: 70%;
+    align-self: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    /* background-color: aliceblue; */
+    border-style: solid;
+    border-color: #1d3557;
+}
+
+.sub-body-content{
+    padding-left: 50px;
+    padding-right: 50px;
+    line-height: 35px;
+    text-align: justify;
+
+}
+
+.highlights{
+    margin-bottom: 15px;
+    font-family: 'Nunito';
+    font-weight: 10;
+    font-size: 15px;
+    width: 50%;
+    margin-left: 100px;
+    padding-left: 20px;
+}
+
+
+
+
+#welcome{
+    margin: 0 auto;
+    padding-left: 0;
+    flex: 0.5 ;
+    font-size: 30px;
+}
+
+#about-body{  
+    display: flex;
+    justify-content: space-around;
+    line-height: 35px;
+    background-color: rgb(228, 245, 252);
+}
+
+#about-me{
+    color: #e63946;
+}
+
+#profile{
+    max-width: 50%;
+    max-height: 50%;
+    width: 200px;
+    height: 200px;
+    /* border-radius: 50%; */
+}
+
+
+#experiences-body{
+    display: flex;
+    flex-direction: column;
+}
+
+#my-experiences{
+    color: #1d3557;
+    padding-left: 100px;
+
+}
+
+#db-intern, #justice-pt{
+    padding-left: 50px;
+}
+
+#mentor{
+    text-align: right;
+    padding-right: 50px;
+}
+
+#mentorship, #justice{    
+    margin-top: 80px;
+}
+
+#academics-body{
+    background-color:  rgb(228, 245, 252);
+    padding-bottom: 100px;
+
+}
+
+#my-academics{
+    padding-left: 100px;
+    color: #e63946;
+}
+
+#academics-body-content{
+    display: flex;
+    justify-content: space-around;
+    line-height: 35px;
+    padding-bottom: 0px;
+    
+}
+
+#academic-content{
+    padding-left: 150px;
+    padding-right: 50px;
+    text-align: justify;
+}
+
+#cu-logo{
+    width: 400px;
+    height: 100px;
+    padding-right: 80px;
+
+}
+
+#highlights{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#degree{
+    color: aliceblue;
+    background-color: #e63946;
+}
+
+#cgpa{
+    color: aliceblue;
+    background-color: #457b9d;
+}
+
+#minor{
+    color: aliceblue;
+    background-color: #1d3557;
+}
+
+#contact-me{
+    display: flex;
+    justify-content: flex-start;
+    color: rgb(186, 223, 235);
+    background-color: #1d3557;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+   
+}
+
+
+#linkedin{
+    width: 40px;
+    height: 40px;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+#email{
+    width: 50px;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 50px;
+}
+
+#e-address{
+    color: aliceblue;
+    padding-top: 0px;
+    padding-left: 20px;
+}
+
+#attributions{
+    color: rgb(186, 223, 235);
+    background-color: #1d3557;
+    font-family: 'Nunito';
+}
+
+

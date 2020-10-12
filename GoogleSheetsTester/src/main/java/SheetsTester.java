@@ -38,22 +38,22 @@ public class SheetsTester{
 
     private static Credential authorize() throws IOException, GeneralSecurityException{
         /*This method gets the credentials for spreadsheets and returns the credential
-        * to grant access to the spreadsheet*/
+         * to grant access to the spreadsheet*/
 
         InputStream in = SheetsTester.class.getResourceAsStream("/credentials.json");
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(
-            JacksonFactory.getDefaultInstance(), new InputStreamReader(in));
+                JacksonFactory.getDefaultInstance(), new InputStreamReader(in));
 
         List<String> scopes = Arrays.asList(SheetsScopes.SPREADSHEETS);// scopes to grant access to (just spreadsheets in this case)
 
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
-            GoogleNetHttpTransport.newTrustedTransport(), JacksonFactory.getDefaultInstance(), clientSecrets, scopes)
-            .setDataStoreFactory(new FileDataStoreFactory(new java.io.File("tokens")))
-            .setAccessType("offline")
-            .build();
+                GoogleNetHttpTransport.newTrustedTransport(), JacksonFactory.getDefaultInstance(), clientSecrets, scopes)
+                .setDataStoreFactory(new FileDataStoreFactory(new java.io.File("tokens")))
+                .setAccessType("offline")
+                .build();
 
         Credential credential = new AuthorizationCodeInstalledApp(
-            flow, new LocalServerReceiver()).authorize("user");
+                flow, new LocalServerReceiver()).authorize("user");
 
         return credential;
 
@@ -67,7 +67,7 @@ public class SheetsTester{
         Credential credential = authorize(); // get credientials using the authorize() method above
 
         return new Sheets.Builder(GoogleNetHttpTransport.newTrustedTransport(), JacksonFactory.getDefaultInstance(), credential)
-        .setApplicationName(APPLICATION_NAME).build();
+                .setApplicationName(APPLICATION_NAME).build();
 
 
     }
@@ -95,16 +95,16 @@ public class SheetsTester{
         /* This method appends new data in a given range */
         sheetsService = getSheetsService();
         Object[] dataArray = data.split(","); // splits data by the commas to be inserted into separate cells
-        
+
         // To write new data (here appending to bottom of spreadsheet), must create new ValueRange as a 2D list
         ValueRange newValues = new ValueRange().setValues( // each list being a row
-            Arrays.asList(Arrays.asList(dataArray)) // each element(here strings) being a column in the row
+                Arrays.asList(Arrays.asList(dataArray)) // each element(here strings) being a column in the row
 
         );
 
         AppendValuesResponse append = sheetsService.spreadsheets().values() // Sends an append request which returns an append result
-        .append(spreadsheetId, range, newValues).setValueInputOption("USER_ENTERED") // Can specify range as entire sheet or specific cell to start data
-        .setInsertDataOption(insertDataOption).setIncludeValuesInResponse(true).execute();
+                .append(spreadsheetId, range, newValues).setValueInputOption("USER_ENTERED") // Can specify range as entire sheet or specific cell to start data
+                .setInsertDataOption(insertDataOption).setIncludeValuesInResponse(true).execute();
 
     }
 
@@ -113,14 +113,14 @@ public class SheetsTester{
 
         sheetsService = getSheetsService();
         ValueRange updateValues = new ValueRange().setValues( // each list being a row
-        Arrays.asList(Arrays.asList(data)) // each element(here strings) being a column in the row
+                Arrays.asList(Arrays.asList(data)) // each element(here strings) being a column in the row
 
-    );
+        );
 
         UpdateValuesResponse update = sheetsService.spreadsheets().values() // Sends an update request which returns an append result
-        .update(spreadsheetId, range, updateValues).setValueInputOption("RAW") // Specify range as one cell
-        .execute();
-        
+                .update(spreadsheetId, range, updateValues).setValueInputOption("RAW") // Specify range as one cell
+                .execute();
+
     }
 
     public static void deleteData(int sheetId,int startIndex,String dimension)throws IOException, GeneralSecurityException{
@@ -129,9 +129,9 @@ public class SheetsTester{
         DeleteDimensionRequest delete = new DeleteDimensionRequest()
                 .setRange(
                         new DimensionRange()
-                        .setSheetId(sheetId) // sheet ID at end of this spreadsheets URL is 0
-                        .setDimension(dimension) // want to delete an entire "ROWS" or "COLUMNS"
-                        .setStartIndex(startIndex) // rows are 0 indexed, this will delete row 15
+                                .setSheetId(sheetId) // sheet ID at end of this spreadsheets URL is 0
+                                .setDimension(dimension) // want to delete an entire "ROWS" or "COLUMNS"
+                                .setStartIndex(startIndex) // rows are 0 indexed, this will delete row 15
                 );
 
         // We are sending a list of requests to do BatchUpdate

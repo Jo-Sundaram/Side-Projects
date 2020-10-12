@@ -27,8 +27,20 @@ for num in range(len(income)):
 def get_months():
     '''Prints all months in column 3'''
     months = sheet.col_values(3)
-    for month in months:
-        print(month)
+    # count = 0
+    # for month in months:
+    #     print(count,end = ". ")
+    #     print(month)
+    
+
+    for i in range(2):
+        print(months[i])
+    
+    for i in range(2,len(months)):
+        print(i-2, end = ". ")
+        print(months[i])
+
+
 
 def update_expenses(date,amount):
     '''Updates the expenses column with the given date and expense amount'''
@@ -36,14 +48,21 @@ def update_expenses(date,amount):
     if date == "Today": # If the given date is today, converts into same format as sheets
         today = datetime.datetime.today()
         date = today.strftime("%b %Y")
+          
+    elif date.isdigit():    
 
+        # if date in months: # updates already existing month expenses
+        #     index = months.index(date)
 
-    if date in months: # updates already existing month expenses
-        index = months.index(date)
+        #     newExpense = float(expenses[index])+amount
+        #     sheet.update_cell(index+1,4,newExpense)
+        #     return
 
-        newExpense = float(expenses[index])+amount
-        sheet.update_cell(index+1,4,newExpense)
-        return
+        if int(date) < len(months):
+            newExpense = float(expenses[int(date)+2])+amount
+            sheet.update_cell(int(date)+3,4,newExpense)
+            return
+
 
 
     # If new date is entered, adds new date and amount into sheets columns
@@ -53,7 +72,6 @@ def update_expenses(date,amount):
     sheet.update_cell(len(expenses),4,amount)
 
 
-
 def update_income(date,amount):
     '''Updates the expenses column with the given date and expense amount'''
 
@@ -61,13 +79,19 @@ def update_income(date,amount):
         today = datetime.datetime.today()
         date = today.strftime("%b %d %Y")
 
-    if date in payday:  # updates already existing date with new income
-        index = payday.index(date)
-        newIncome = float(income[index])+amount
+    elif date.isdigit(): # updates already existing date with new income
+        
+        if int(date) < len(payday):  
+            index = payday.index(date)
+            newIncome = float(income[index])+amount
 
-        sheet.update_cell(index+1,2,newIncome)
+            sheet.update_cell(index+1,2,newIncome)
 
-        return
+            return
+            # newIncome = float(income[int(date)+2])+amount
+            # sheet.update_cell(int(date)+3,2,newIncome)
+            # return
+
 
     # if new date is entered, adds date and amount to sheets column
     income.append(amount)
@@ -79,18 +103,26 @@ def update_income(date,amount):
 def main():
 
     # Ask if user wants to add an expense or income
-    user = input("Expense or Income? : ")
+    user = int(input("Select option: \n 1. Expense \n 2. Income \n "))
 
-    if user == "Expense":
+    # Valid input checking
+    while(user <1 or user >2):
+        user = int(input("Select option: \n 1. Expense \n 2. Income \n "))
+
+
+    if user == 1: # If user chooses Expense
         get_months()  # Displays existing months
         date = input("Select month or enter 'Today': ")
         amount = float(input("Enter expense amount: $ "))
         update_expenses(date,amount)
 
 
-    elif user == "Income":
+    elif user == 2: # If user chooses Income
         date = input("Enter date (Jan 01 2020) or enter 'Today': ")
         user = float(input("Enter amount: $ "))
         update_income(date,user)
+
+    
+
 
 main()
